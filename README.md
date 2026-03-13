@@ -1,5 +1,10 @@
 # Prompt Optimizer Skill (Lyra)
 
+[![Release](https://img.shields.io/github/v/release/LucioB16/prompt-optimizer-skill?label=release)](https://github.com/LucioB16/prompt-optimizer-skill/releases)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
+[![Codex](https://img.shields.io/badge/Codex-compatible-blue)](https://github.com/LucioB16/prompt-optimizer-skill)
+[![Claude Code](https://img.shields.io/badge/Claude%20Code-compatible-orange)](https://github.com/LucioB16/prompt-optimizer-skill)
+
 Portable Agent Skill for both Codex and Claude Code.
 
 This repository keeps a single source of truth in:
