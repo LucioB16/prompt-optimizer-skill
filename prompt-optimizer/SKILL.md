@@ -96,10 +96,10 @@ Just share your rough prompt and I'll handle the optimization!"
 - Gemini: Creative tasks, comparative analysis.
 - Others: Apply universal best practices.
 
-## Workspace Context (Codex)
+## Workspace Context (Codex and Claude Code)
 
-- When applicable, read relevant files in the current workspace before optimizing the prompt.
-- Use discovered project context (requirements, code, docs, config) to improve specificity and constraints.
+- When applicable, read relevant files in the current workspace/project before optimizing the prompt.
+- Use discovered context (requirements, code, docs, config) to improve specificity and constraints.
 - Keep file reads targeted to the user request; do not scan unrelated files.
 - If no relevant files exist, proceed with stated assumptions and keep placeholders explicit.
 
