@@ -1,0 +1,4 @@
+interface:
+  display_name: "Prompt Optimizer"
+  short_description: "Transform rough asks into high-quality AI prompts"
+  default_prompt: "Use $prompt-optimizer to optimize this draft prompt for ChatGPT in DETAIL mode."
