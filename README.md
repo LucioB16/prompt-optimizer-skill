@@ -1,20 +1,21 @@
-# Prompt Optimizer Skill (Lyra)
+# Lyra · Prompt Optimizer Skill
+
+**Turn a rough request into a precise, copy-ready prompt for the model or agent you're using.**
+
+A portable Agent Skill that clarifies goals, constraints, output formats and missing assumptions across research, coding and everyday AI workflows. One shared `prompt-optimizer/SKILL.md` is the source of truth for supported installations.
 
 [![Release](https://img.shields.io/github/v/release/LucioB16/prompt-optimizer-skill?label=release)](https://github.com/LucioB16/prompt-optimizer-skill/releases)
-[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
-[![Codex](https://img.shields.io/badge/Codex-compatible-blue)](https://github.com/LucioB16/prompt-optimizer-skill)
-[![Claude Code](https://img.shields.io/badge/Claude%20Code-compatible-orange)](https://github.com/LucioB16/prompt-optimizer-skill)
+[![MIT](https://img.shields.io/badge/license-MIT-466a59)](LICENSE)
 
-Portable Agent Skill for both Codex and Claude Code.
+| Research | Coding agents | Everyday prompts |
+| :-- | :-- | :-- |
+| Define evidence, sources and comparison criteria. | Clarify scope, acceptance checks and constraints. | Specify intent, audience, tone and output. |
 
-This repository keeps a single source of truth in:
+## Try it
 
-- `prompt-optimizer/SKILL.md`
+After installing the skill, ask your agent to optimize the prompt you have. For example:
 
-## Repository Layout
-
-- `prompt-optimizer/SKILL.md` - skill logic (shared by both platforms)
-- `prompt-optimizer/agents/openai.yaml` - Codex UI metadata
+> Use Lyra to improve this prompt for a coding agent. Keep the technical constraints, resolve ambiguities, and return one copy-ready version.
 
 ## Install in Codex
 
@@ -36,6 +37,11 @@ cp prompt-optimizer/SKILL.md ~/.claude/skills/prompt-optimizer/SKILL.md
 For shared project-level setup, add this file to your repo:
 
 - `.claude/skills/prompt-optimizer/SKILL.md`
+
+## Repository Layout
+
+- `prompt-optimizer/SKILL.md` - skill logic (shared by both platforms)
+- `prompt-optimizer/agents/openai.yaml` - Codex UI metadata
 
 ## Why One Repo
 
