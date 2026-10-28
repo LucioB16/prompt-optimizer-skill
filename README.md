@@ -1,45 +1,48 @@
-# Prompt Optimizer Skill (Lyra)
+# Prompt Optimizer Skill
 
 [![Release](https://img.shields.io/github/v/release/LucioB16/prompt-optimizer-skill?label=release)](https://github.com/LucioB16/prompt-optimizer-skill/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
 [![Codex](https://img.shields.io/badge/Codex-compatible-blue)](https://github.com/LucioB16/prompt-optimizer-skill)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-compatible-orange)](https://github.com/LucioB16/prompt-optimizer-skill)
 
-Portable Agent Skill for both Codex and Claude Code.
+Portable, persona-free prompt-optimization skill for coding agents, including Codex and Claude Code. It can create copy-ready prompts for coding, research, evaluation, and other AI workflows. It optimizes the prompt; it does not execute the underlying task unless expressly asked.
 
-This repository keeps a single source of truth in:
+## Repository layout
 
-- `prompt-optimizer/SKILL.md`
+- `prompt-optimizer/SKILL.md` — authoritative workflow, mode/model selection, and output rules.
+- `prompt-optimizer/references/Prompt_Optimization_Reference.md` — detailed method and examples.
+- `prompt-optimizer/references/Project_Bootstrap_Mode.md` — coding-agent project bootstrap, artifacts, execution pacing, and Git decisions.
+- `prompt-optimizer/agents/openai.yaml` — Codex UI metadata.
 
-## Repository Layout
+## Modes
 
-- `prompt-optimizer/SKILL.md` - skill logic (shared by both platforms)
-- `prompt-optimizer/agents/openai.yaml` - Codex UI metadata
+BASIC, DETAIL, RESEARCH, AGENT, PROJECT_BOOTSTRAP, EVAL, MULTIMODAL, and PLATFORM-SPECIFIC. Combine relevant modes when useful (for example AGENT + RESEARCH).
+
+PROJECT_BOOTSTRAP is for starting a coding-agent project with a short kickoff prompt plus a ZIP containing `PLAN.md`, `AGENTS.md`, and `CLAUDE.md`. It asks about autonomous `/goal`-style execution and Git use before finalizing artifacts; neither choice is assumed. Creating a ZIP requires file-generation capability in the destination environment.
 
 ## Install in Codex
 
-Copy the skill folder to your global Codex skills directory:
+Copy the complete skill directory into your global Codex skills directory:
 
 ```powershell
-Copy-Item -Path .\prompt-optimizer -Destination "$HOME\.codex\skills\prompt-optimizer" -Recurse -Force
+New-Item -ItemType Directory -Force -Path "$HOME\.codex\skills\prompt-optimizer" | Out-Null
+Copy-Item -Path .\prompt-optimizer\* -Destination "$HOME\.codex\skills\prompt-optimizer" -Recurse -Force
 ```
 
 ## Install in Claude Code
 
-Copy the same `SKILL.md` into Claude skills:
+Copy the **whole directory**, including `references/` (copying only SKILL.md would omit required bootstrap guidance):
 
 ```bash
 mkdir -p ~/.claude/skills/prompt-optimizer
-cp prompt-optimizer/SKILL.md ~/.claude/skills/prompt-optimizer/SKILL.md
+cp -R prompt-optimizer/. ~/.claude/skills/prompt-optimizer/
 ```
 
-For shared project-level setup, add this file to your repo:
+For project-level installation, copy the entire `prompt-optimizer/` directory to `.claude/skills/prompt-optimizer/`.
 
-- `.claude/skills/prompt-optimizer/SKILL.md`
+## Maintenance
 
-## Why One Repo
-
-Keeping Codex and Claude in one repository avoids drift and makes versioning, issues, and releases easier.
+Keep the core rules in SKILL.md and detailed guidance in references. Avoid conflicting or duplicated instructions; verify behavior in the target coding agents before publishing a new release.
 
 ## License
 
